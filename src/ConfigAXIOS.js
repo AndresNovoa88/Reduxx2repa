@@ -2,7 +2,7 @@ import axios from "axios";
 
 // INSTANCIA DE AXIOS
 const iAx = axios.create({
-    baseURL: 'https://localhost:2000/api',
+    baseURL: 'http://localhost:2000/api',
     headers: {
         'Content-Type': 'application/json',
     }
@@ -12,7 +12,7 @@ const iAx = axios.create({
 iAx.interceptors.request.use(
     config => {
         // Modificar la cabecera del mensaje y/o modificar la solicitud
-        config.headers['Autorización'] = 'Esta es una autorización-123';
+        config.headers['Autorizacion'] = 'Esta es una autorizacion-123';
         return config;
     },
     error => {
@@ -39,3 +39,6 @@ iAx.interceptors.response.use(
 
 export default iAx;
 
+/**
+ * los interceptor no capturan datos sino los intercambian
+ */
