@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import { Button, Form, FormGroup } from 'react-bootstrap';
 import iAx from './ConfigAXIOS';
@@ -40,6 +40,7 @@ function App() {
       disp(setIsbn(data.isbn));
       disp(setTitulo(data.titulo));
       disp(setAutor(data.autor)); //se pasa la info seleccionando el isbn del store
+      
       crearLibro(JSON.stringify(data));
     }
   }
@@ -48,8 +49,10 @@ function App() {
 //endpoint
     try{
       const rta = await iAx.post('/setLibro',data);
-      console.log("Rta>>>" + JSON.stringify(rta)); 
-      //console.log("data: " + JSON.stringify(rta.data));
+      //console.log("Rta>>>" + JSON.stringify(rta, null, 2)); 
+      console.log("data: " + JSON.stringify(rta.data));
+      console.log("status: " + rta.status);
+      console.log("ch: " + rta.config.headers);
     }catch(error){
       console.log("Error>>>" + error.message);
     }

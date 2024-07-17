@@ -28,6 +28,3 @@ const reducers = createSlice({
 export const {setIsbn,setTitulo,setAutor}=reducers.actions;
 export default reducers.reducer;
 
-/**
- * Las acciones reemplazan el useState
- */

@@ -1,3 +1,5 @@
+
+
 import { configureStore } from "@reduxjs/toolkit";
 import reducers from './reducers';
 
@@ -8,5 +10,3 @@ const store=configureStore({
 });
 
 export default store;
-
-import (configureStore)
